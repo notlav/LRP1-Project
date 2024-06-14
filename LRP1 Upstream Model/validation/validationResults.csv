@@ -1,0 +1,25 @@
+,ID,Input,Input 2,Output,Measurement,Prediction,Predicted Change,Match,Tag
+0,v1,TGFb,KD,cMyc,Increase,No change,-1.858012620581384e-05,no,In-Out
+1,v2,TGFb ,KD,p15,No Change,No change,-2.113286015659188e-05,yes,In-Out
+2,v3,TGFb ,KD,p21,No Change,No change,-1.63291752026673e-05,yes,In-Out
+3,v4,TGFb ,KD,cdc25A,Increase,No change,2.930988785010413e-14,no,In-Out
+4,v5,TGFb ,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+5,v6,TGFbR,KD,cMyc,Increase,No change,-1.858012620581384e-05,no,In-Out
+6,v7,TGFbR,KD,cdc25A,Increase,No change,2.930988785010413e-14,no,In-Out
+7,v8,TGFbR,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+8,v9,TGFbR,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+9,v10,Rb,KD,E2FDP,Increase,No change,-5.8590206521436095e-05,no,In-Out
+10,v11,Rb,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+11,v12,p21 ,KD,CyclinAECDK2,Increase,No change,3.432416818768824e-05,no,In-Out
+12,v13,p21 ,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+13,v14,cMyc ,OE,CyclinAECDK2,Increase,No change,3.432416818768824e-05,no,In-Out
+14,v15,cMyc ,OE,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+15,v16,CyclinAECDK2 ,OE,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+16,v17,CyclinAECDK2,KD,Rb,Increase,No change,-8.758831575306214e-06,no,In-Out
+17,v18,p21 ,OE,Rb,Increase,No change,-8.758831575306214e-06,no,In-Out
+18,v19,p21 ,KD,Rb,Decrease,No change,-8.758831575306214e-06,no,In-Out
+19,v20,p21 ,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+20,v21,CyclinDCDK4 ,OE,Rb,Decrease,No change,-8.758831575306214e-06,no,In-Out
+21,v22,CyclinDCDK4 ,OE,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+22,v23,Rb,KD,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
+23,v24,E2FDP,OE,G1Stransition,Increase,No change,0.00010803455564445397,no,In-Out
