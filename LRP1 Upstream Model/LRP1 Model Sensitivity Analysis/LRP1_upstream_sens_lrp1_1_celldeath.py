@@ -30,6 +30,7 @@ w_lrp1ag = 1
 w_ros = 9
 
 w[w_lrp1ag] = 1
+# simulate MI 
 w[w_ros] = 0.4
 
 sol1 = solve_ivp(file.ODEfunc, tspan,  sol0_SS, args=(tau, ymax, w, n, EC50), t_eval=np.linspace(*tspan, 201))
@@ -111,11 +112,20 @@ speciesNames.index('cellDeath')
 
 #%% plot cell death sensitivity only 
 
-sens_celldeath = pd.DataFrame(sens[12,:]).transpose()
-sens_celldeath.columns = speciesNames
+sens_celldeath = pd.DataFrame(sens[12,:])
+sens_celldeath.index = speciesNames
+sens_celldeath.columns = ['cellDeath activity']
+
 fig1, ax1 = plt.subplots()
 fig1.set_size_inches(8, 6)
-ax1 = sns.barplot(sens_celldeath.loc[:, (sens_celldeath > 0.1).all()], color = 'black')
+
+# Filter species that have cellDeath activity > 0.1
+celldeath_nodes = sens_celldeath[sens_celldeath['cellDeath activity'] > 0.1]
+
+# sort ranked nodes
+ranked_nodes = celldeath_nodes.sort_values(by='cellDeath activity', ascending=False)
+
+ax1 = sns.barplot(ranked_nodes.transpose(), color = 'black')
 # rotate x labels
 plt.xticks(rotation=45)
 
@@ -123,5 +133,10 @@ font = {'fontname':'Arial'}
 #plt.title("Sensitivity Analysis", fontsize = 40, **font)
 plt.xlabel("Node Knockdown", fontsize = 20, **font)
 plt.ylabel("Cell Death (Change in Activity)", fontsize=20, **font)
+
+# export as svg
+plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/sensCellDeath.svg', format='svg')
+
+plt.show()
 
 # %%

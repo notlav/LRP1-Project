@@ -13,8 +13,7 @@ import matplotlib.colors as mcolors
 import matplotlib.cm as cm
 
 #%% Read validation excel file
-validation = pd.read_excel('/Volumes/SaucermanLab/Lavie/LRP1/Code/LRP1 Upstream Model/validation/LRP1_validation_edit.xlsx')
-
+validation = pd.read_excel('/Volumes/SaucermanLab/Lavie/LRP1/LRP1 Project Code/LRP1-Project/LRP1 Upstream Model/validation/LRP1_validation_edit.xlsx')
 # %% Take 'Measurement' column and create a new column mapping to numerical values 
 lit = np.zeros(len(validation))
 model = np.zeros(len(validation))
@@ -70,5 +69,3 @@ plt.ylabel("", fontsize=30, **font)
 plt.yticks(rotation = 0, fontsize = 35, **font)
 plt.xticks(fontsize = 35, **font)
 
-
-# %%
