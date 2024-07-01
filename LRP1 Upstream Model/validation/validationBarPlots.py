@@ -55,35 +55,12 @@ lowLRP1_ss['condition'] = 'low LRP1'
 highLRP1_ss['condition'] = 'high LRP1'
 
 steady_long = pd.concat([lowLRP1_ss, highLRP1_ss])
-#%% plot activity for each output under different ROS conditions
-fig, axs = plt.subplots()
-validation_species = ('ERK12', 'PI3K', 'Akt', 'NFkB', 'Bax', 'Bcl2', 'cas3', 'apoptosis')
-
-# loop through each species and plot activity for each condition
-# show each plot separately
-# add title
-
-for species in validation_species:
-	sns.barplot(
-		data = steady_long[steady_long['species'] == species],
-		x = 'condition',
-		y = 'activity',
-		color= 'gray',
-	)
-	plt.title(f'{species} activity', fontsize = 16)
-	# set font to arial
-	plt.rcParams['font.family'] = 'Arial'
-
-	# export to svg
-	# change file name each time
-	# include file path
-	plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/' + f'{species}_activity.svg')
-
-	plt.show()
 
 
 #%% plot activity for each output
 # plot all species in one figure 
+validation_species = ('ERK12', 'PI3K', 'Akt', 'NFkB', 'Bax', 'Bcl2', 'cas3', 'apoptosis')
+
 fig, ax = plt.subplots(2,4, figsize = (20, 10), sharey = True)
 
 palette = sns.color_palette('crest', n_colors=8)
@@ -105,4 +82,29 @@ for i, species in enumerate(validation_species):
 
 plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/' + 'validation_activity_gradient.svg')
 
+#%% plot activity for each output under different ROS conditions
+fig, axs = plt.subplots()
 
+# loop through each species and plot activity for each condition
+# show each plot separately
+# add title
+palette = sns.color_palette('crest', n_colors=8)
+
+for i, species in enumerate(validation_species):
+	sns.barplot(
+		data = steady_long[steady_long['species'] == species],
+		x = 'condition',
+		y = 'activity',
+		color= palette[i],
+	)
+	plt.title(f'{species} activity', fontsize = 16)
+	# set font to arial
+	plt.rcParams['font.family'] = 'Arial'
+
+	# export to svg
+	# change file name each time
+	# include file path
+	plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/' + f'{species}_activity.svg')
+
+	plt.show()
+# %%
