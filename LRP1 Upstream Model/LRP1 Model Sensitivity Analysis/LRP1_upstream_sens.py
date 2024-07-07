@@ -198,7 +198,7 @@ sens_lrp1ag_1 = performSensAnalysis(1, 0.4)
 sens_plot = plotSens(sens_lrp1ag_1)
 
 #%% call sensitivity matrix influence analysis 
-sens_file = '/Volumes/SaucermanLab/Lavie/LRP1/Code/LRP1 Upstream Model/sens_lrp1_0.csv'
+sens_file = '/Volumes/SaucermanLab/Lavie/LRP1/LRP1 Project Code/LRP1-Project/LRP1 Upstream Model/LRP1 Model Sensitivity Analysis/sens_lrp1_1.csv'
 sums_lrp1 = sensNetworkInfluence(sens_file)
 ranked_plot = plotRankedSens(sens_file, sums_lrp1['top10_rows'], sums_lrp1['top10_cols'])
 

@@ -251,7 +251,6 @@ fig = sns.catplot(
 	}
 )
 
-
 # %%
 fig, axs = plt.subplots(4, 2)
 validation_species = ('ERK12', 'PI3K', 'Akt', 'NFkB', 'Bax', 'Bcl2', 'cas3', 'apoptosis')

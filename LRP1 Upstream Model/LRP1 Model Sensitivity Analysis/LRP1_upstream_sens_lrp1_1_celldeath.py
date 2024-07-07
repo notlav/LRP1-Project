@@ -117,7 +117,7 @@ sens_celldeath.index = speciesNames
 sens_celldeath.columns = ['cellDeath activity']
 
 fig1, ax1 = plt.subplots()
-fig1.set_size_inches(8, 6)
+fig1.set_size_inches(8,6)
 
 # Filter species that have cellDeath activity > 0.1
 celldeath_nodes = sens_celldeath[sens_celldeath['cellDeath activity'] > 0.1]
@@ -135,7 +135,7 @@ plt.xlabel("Node Knockdown", fontsize = 20, **font)
 plt.ylabel("Cell Death (Change in Activity)", fontsize=20, **font)
 
 # export as svg
-plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/sensCellDeath.svg', format='svg')
+plt.savefig('/Volumes/SaucermanLab/Lavie/LRP1/Figures/sensCellDeath.svg', format='svg', dpi=1200)
 
 plt.show()
 
