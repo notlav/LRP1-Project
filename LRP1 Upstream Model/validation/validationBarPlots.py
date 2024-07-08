@@ -15,7 +15,7 @@ import LRP1_upstream_params as LRP1_ODE_params
 #%% run model simulation
 
 # LRP1 low and high conditions
-LRP1_low = 0.2
+LRP1_low = 0
 LRP1_high = 1
 
 # reaction indices for LRP1 and ROS
@@ -51,8 +51,8 @@ lowLRP1_ss = lowLRP1_df.query('time == @tspan[1]').reset_index().drop(columns=['
 highLRP1_ss = highLRP1_df.query('time == @tspan[1]').reset_index().drop(columns=['time', 'index'])
 
 # combine low and high LRP1 steady state values and add condition column
-lowLRP1_ss['condition'] = 'low LRP1'
-highLRP1_ss['condition'] = 'high LRP1'
+lowLRP1_ss['condition'] = 'control'
+highLRP1_ss['condition'] = 'LRP1 agonist'
 
 steady_long = pd.concat([lowLRP1_ss, highLRP1_ss])
 
@@ -91,12 +91,20 @@ fig, axs = plt.subplots()
 palette = sns.color_palette('crest', n_colors=8)
 
 for i, species in enumerate(validation_species):
+	plt.figure(figsize = (8, 8))
+
 	sns.barplot(
 		data = steady_long[steady_long['species'] == species],
 		x = 'condition',
 		y = 'activity',
 		color= palette[i],
 	)
+
+	plt.xticks(fontsize = 16)
+	plt.yticks(fontsize = 14)
+	plt.ylabel('activity', fontsize = 16)
+	plt.xlabel('', fontsize = 16)
+
 	plt.title(f'{species} activity', fontsize = 16)
 	# set font to arial
 	plt.rcParams['font.family'] = 'Arial'
@@ -108,3 +116,4 @@ for i, species in enumerate(validation_species):
 
 	plt.show()
 # %%
+
