@@ -207,7 +207,7 @@ def runValidation(data):
     resultChart = pd.DataFrame({'ID': validationIDs, 'Input': input1, 'Input 2': input2, 'Output': output, 'Control': control, 'Measurement': measurement, 'Prediction': prediction, 'Predicted Change': predicted_change, 'Match': pd.Series(match_strings), 'Tag': validationTags})
 
     # export result chart to csv
-    resultChart.to_csv('/Volumes/SaucermanLab/Lavie/LRP1/Code/LRP1 Upstream Model/validation/validationResults.csv', index=True)
+    #resultChart.to_csv('/Volumes/SaucermanLab/Lavie/LRP1/Code/LRP1 Upstream Model/validation/validationResults.csv', index=True)
 
     # Calculate percent match (% validation)
     percentMatch = numMatch/len(measurement)*100
@@ -217,7 +217,7 @@ def runValidation(data):
 #%% Call function
 
 # Read the validation sheet
-data = pd.read_excel('/Volumes/SaucermanLab/Lavie/LRP1/Code/LRP1 Upstream Model/validation/LRP1_validation_edit.xlsx')
+data = pd.read_excel('/Volumes/saucermanlab/Lavie/LRP1/LRP1 Project Code/LRP1-Project/LRP1 Upstream Model/validation/LRP1_validation_edit.xlsx')
 #data = pd.read_excel(r"Y:\Lavie\Python Code\Automated Validation\toyValidationPython.xlsx")
 
 percentMatch, resultChart, byClass = runValidation(data)

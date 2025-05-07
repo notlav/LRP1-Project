@@ -202,4 +202,3 @@ sens_file = '/Volumes/SaucermanLab/Lavie/LRP1/LRP1 Project Code/LRP1-Project/LRP
 sums_lrp1 = sensNetworkInfluence(sens_file)
 ranked_plot = plotRankedSens(sens_file, sums_lrp1['top10_rows'], sums_lrp1['top10_cols'])
 
-# %%

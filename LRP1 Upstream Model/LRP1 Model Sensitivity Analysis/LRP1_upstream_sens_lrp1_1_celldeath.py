@@ -112,7 +112,7 @@ speciesNames.index('cellDeath')
 
 #%% plot cell death sensitivity only 
 
-sens_celldeath = pd.DataFrame(sens[12,:])
+sens_celldeath = pd.DataFrame(sens[speciesNames.index('cellDeath'),:])
 sens_celldeath.index = speciesNames
 sens_celldeath.columns = ['cellDeath activity']
 

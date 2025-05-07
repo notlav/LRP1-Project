@@ -54,12 +54,14 @@ vcenter = 0
 vmin, vmax = -1, 1 
 normalize = mcolors.TwoSlopeNorm(vcenter=vcenter, vmin=vmin, vmax=vmax)
 
-#colors = ["#497CB7", "#A42115"]
-#colormap = sns.color_palette(colors)
+colors = ["#497CB7", "#A42115"]
+colormap = sns.color_palette(colors)
 
 fig1, ax1 = plt.subplots()
-fig1.set_size_inches(8, 20)
-ax1 = sns.heatmap((validation_heatmap), linewidths=1, norm=normalize, cmap='seismic')
+fig1.set_size_inches(8, 8)
+ax1 = sns.heatmap((validation_heatmap), linewidths=1, norm=normalize, cmap=colormap)
+
+# change 
 
 
 font = {'fontname':'Arial'}
@@ -69,3 +71,5 @@ plt.ylabel("", fontsize=30, **font)
 plt.yticks(rotation = 0, fontsize = 35, **font)
 plt.xticks(fontsize = 35, **font)
 
+
+# %%
